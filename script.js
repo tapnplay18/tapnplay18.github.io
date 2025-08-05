@@ -1,4 +1,4 @@
-fetch('config.json')
+fetch('config.json?v=' + Date.now())
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById('videoContainer');

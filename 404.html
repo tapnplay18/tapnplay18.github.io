@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mau Ngapain Sayang 😏💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    img {
+      max-width: 300px;
+      margin: 20px 0;
+      border-radius: 20px;
+    }
+    .small {
+      font-size: 0.8em;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Lagi mikir dulu ya 😳💕</h1>
+  <img id="thumbnail" src="" alt="" style="display:none;">
+  <p id="countdown"></p>
+  <p class="small" id="footer">Made with 🤭 by Arya & Cici</p>
+
+  <script>
+    async function main() {
+      const path = window.location.pathname;
+      const res = await fetch('/config2.json');
+      const data = await res.json();
+
+      const match = data.download.find(item => item.ifLinkWebsite === path);
+      if (!match) {
+        document.getElementById("title").textContent = "404 😔 File gak ketemu...";
+        document.getElementById("footer").textContent = "Cici belum nyediain link ini 😩";
+        return;
+      }
+
+      // Set Title
+      document.getElementById("title").textContent = match.title || "Mau download yaa 😏💕";
+
+      // Set Thumbnail
+      if (match.thumbnail) {
+        const thumb = document.getElementById("thumbnail");
+        thumb.src = match.thumbnail;
+        thumb.style.display = "block";
+      }
+
+      // Countdown + Redirect
+      let duration = match.duration || 5;
+      const countdown = document.getElementById("countdown");
+      const interval = setInterval(() => {
+        countdown.textContent = `Tunggu bentar ya sayang... (${duration})`;
+        duration--;
+        if (duration < 0) {
+          clearInterval(interval);
+          window.location.href = match.downloadThisFile;
+        }
+      }, 1000);
+    }
+
+    main();
+  </script>
+</body>
+  </html>

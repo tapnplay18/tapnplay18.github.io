@@ -1,0 +1,10 @@
+{
+  "download":[
+    {
+      "ifLinkWebsite":"/test",
+      "downloadThisFile":"https://image.com",
+      "duration":10,
+      "title":"hahhahah"
+    }
+  ]
+}

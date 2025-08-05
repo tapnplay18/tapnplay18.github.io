@@ -1,0 +1,26 @@
+{
+  "videos": [
+    {
+      "title": "Pas baru dicolek langsung ngangkang 😭",
+      "channel": "Mbak Rosa Official",
+      "profile": "https://i.imgur.com/3GvwNBf.jpeg",
+      "thumbnail": "https://via.placeholder.com/300x170.png?text=Rosa+Kaget",
+      "preview": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "link": "https://youtube.com",
+      "views": "3,2 jt x nonton",
+      "uploaded": "2 hari lalu",
+      "duration": "10:32"
+    },
+    {
+      "title": "Belum masuk udah teriak enak 😳",
+      "channel": "Kak Siska Gatal",
+      "profile": "https://i.imgur.com/f1QH0Qb.png",
+      "thumbnail": "https://via.placeholder.com/300x170.png?text=Siska+Ngegas",
+      "preview": "https://www.w3schools.com/html/movie.mp4",
+      "link": "https://youtube.com",
+      "views": "7,8 jt x nonton",
+      "uploaded": "1 minggu lalu",
+      "duration": "08:45"
+    }
+  ]
+}
